@@ -1,5 +1,5 @@
-import Login from "@/auth/login.vue";
 import Register from "@/auth/register.vue";
+import Login from "@/auth/login.vue";
 import About from "@/components/About.vue";
 import Contact from "@/components/Contact.vue";
 import EditStudent from "@/components/EditStudent.vue";

@@ -12,6 +12,7 @@ import axios from 'axios';
 //     "active": true,
 //     "score": 90,
 //     "DateOfBirth":"2020-12-01"
+//     "photo": ""
 // }
 
 const form = ref({
@@ -23,7 +24,8 @@ const form = ref({
   studentStatus: '',
   active: true,
   score: 0,
-  DateOfBirth: ''
+  DateOfBirth: '',
+  photo: ''
 });
 
 const isLoading = ref(false);
@@ -42,7 +44,8 @@ const handleRegister = async () => {
     studentStatus: form.value.studentStatus,
     active: Boolean(form.value.active),
     score: Number(form.value.score),
-    DateOfBirth: form.value.DateOfBirth
+    DateOfBirth: form.value.DateOfBirth,
+    photo: form.value.photo,
   };
 
   try {
@@ -128,11 +131,15 @@ const handleRegister = async () => {
               </div>
 
               <div class="row mb-4 align-items-end">
-                <div class="col-md-6">
+                <div class="col-md-3">
                   <label class="form-label">Score</label>
                   <input v-model="form.score" type="number" class="form-control" min="0" max="100">
                 </div>
-                <div class="col-md-6 pt-2">
+                <div class="col-md-6">
+                  <label class="form-label">Photo</label>
+                  <input type="text" class="form-control" accept="image/*" @change="handleFileUpload">
+                </div>
+                <div class="col-md-3 pt-2">
                   <div class="form-check form-switch">
                     <input v-model="form.active" class="form-check-input" type="checkbox" id="activeStatus">
                     <label class="form-check-label" for="activeStatus">Active Account</label>

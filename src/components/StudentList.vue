@@ -58,7 +58,7 @@ onMounted(fetchStudents);
       <table class="table table-hover table-striped mb-0">
         <thead class="table-dark">
           <tr>
-            <th scope="col" class="ps-4">#</th>
+            <th scope="col" class="ps-4">Photo</th>
             <th scope="col">First Name</th>
             <th scope="col">Last Name</th>
             <th scope="col">Email</th>
@@ -67,7 +67,7 @@ onMounted(fetchStudents);
         </thead>
         <tbody>
           <tr v-for="(student, index) in filteredStudents" :key="student._id">
-            <td class="ps-4 fw-bold">{{ index + 1 }}</td>
+            <img :src="student.photo" :alt="index" width="100px" height="100px">
             <td>{{ student.firstName }}</td>
             <td>{{ student.lastName }}</td>
             <td>
