@@ -8,7 +8,7 @@ import Contact from "@/components/Contact.vue";
 import Detail from "@/components/Detail.vue";
 
 import Login from "@/components/Login.vue";
-import Register from "@/auth/Register.vue";
+import Register from "@/components/Register.vue";
 
 const routes = [
   { path: "/", component: Home },
