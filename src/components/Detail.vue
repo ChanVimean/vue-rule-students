@@ -127,6 +127,18 @@ onMounted(getStudentDetail)
 
                   <div class="col-md-6">
                     <div class="border rounded p-3 bg-light">
+                      <small class="text-muted">Grade</small>
+                      <h6 class="mb-0" v-if="student.score >= 90">A</h6>
+                      <h6 class="mb-0" v-else-if="student.score >= 80">B</h6>
+                      <h6 class="mb-0" v-else-if="student.score >= 70">C</h6>
+                      <h6 class="mb-0" v-else-if="student.score >= 60">D</h6>
+                      <h6 class="mb-0" v-else-if="student.score >= 50">E</h6>
+                      <h6 class="mb-0" v-else>F</h6>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="border rounded p-3 bg-light">
                       <small class="text-muted">Date of Birth</small>
                       <h6 class="mb-0">{{ formatDate(student.DateOfBirth) }}</h6>
                     </div>
