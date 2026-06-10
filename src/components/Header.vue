@@ -14,7 +14,7 @@ export default {
     <div class="container">
       <router-link class="navbar-brand fw-bold d-flex align-items-center gap-2" to="/">
         <span class="text-primary rounded-circle mr-3 d-inline-flex align-items-center justify-content-center brand-icon">
-          <img src="/public/logo.png" alt="logo" width="50">
+          <img src="/logo.png" alt="logo" width="50">
         </span>
 
         {{ title }}
