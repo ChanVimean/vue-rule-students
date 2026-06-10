@@ -88,7 +88,7 @@ onMounted(getStudentDetail)
           </div>
 
           <div class="card-body p-4">
-            <div class="row g-4 align-items-center">
+            <section class="row g-4 align-items-center">
               <div class="col-md-3 text-center">
                 <img :src="student.photo || defaultPhoto" alt="Student photo" class="img-fluid rounded-circle border"
                   style="width: 150px; height: 150px; object-fit: cover;" />
@@ -145,11 +145,11 @@ onMounted(getStudentDetail)
                   </div>
                 </div>
               </div>
-            </div>
+            </section>
 
             <hr class="my-4" />
 
-            <div class="d-flex justify-content-between align-items-center mb-3">
+            <section class="d-flex justify-content-between align-items-center mb-3">
               <h5 class="mb-0">Year 3 Semester 2 Scores</h5>
 
               <div class="d-flex">
@@ -160,9 +160,9 @@ onMounted(getStudentDetail)
                   Back
                 </button>
               </div>
-            </div>
+            </section>
 
-            <div class="table-responsive">
+            <section v-show="student.y3s2 && student.y3s2.length > 0" class="table-responsive">
               <table class="table table-bordered table-hover align-middle">
                 <thead class="table-primary">
                   <tr>
@@ -194,7 +194,7 @@ onMounted(getStudentDetail)
                   </tr>
                 </tbody>
               </table>
-            </div>
+            </section>
           </div>
         </div>
       </div>

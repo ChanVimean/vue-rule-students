@@ -28,6 +28,10 @@ const form = ref({
   y3s2: []
 })
 
+const defaultPhoto = 'data:image/svg+xml,' + encodeURIComponent(
+  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150"><rect width="150" height="150" fill="#e9ecef"/><circle cx="75" cy="58" r="30" fill="#adb5bd"/><circle cx="75" cy="150" r="55" fill="#adb5bd"/></svg>'
+)
+
 const newSubject = () => ({
   subject: '',
   score: 0,
@@ -180,8 +184,8 @@ onMounted(fetchStudent)
             </div>
           </div>
 
-          <div class="row mb-4 align-items-center">
-            <div class="col-md-6">
+          <div class="row mb-4 align-items-center ">
+            <div class="col-md-2">
               <label class="form-label fw-semibold">Score</label>
               <input v-model="form.score" type="number" class="form-control" />
             </div>
@@ -189,6 +193,12 @@ onMounted(fetchStudent)
             <div class="col-md-6">
               <label class="form-label fw-semibold">Photo URL</label>
               <input v-model="form.photo" type="text" class="form-control" />
+            </div>
+
+            <div class="col-md-4 text-center">
+              <img :src="form.photo || defaultPhoto" alt="Student photo" class="img-fluid rounded-circle border"
+                style="width: 160px; height: 160px; object-fit: cover;" />
+              <label class="form-label fw-semibold d-block">Preview</label>
             </div>
           </div>
 
